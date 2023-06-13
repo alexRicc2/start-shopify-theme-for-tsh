@@ -200,7 +200,7 @@
   --text-alignment: var(--blog-card-text-alignment);
 }
 .is-pinned .header-wrapper{
-  background-color: 'red';
+  background-color: red;
 }
 .contains-content-container,
 .content-container {
