@@ -196,7 +196,9 @@
   --image-padding: var(--blog-card-image-padding);
   --text-alignment: var(--blog-card-text-alignment);
 }
-
+.is-pinned{
+  background-color: 'red';
+}
 .contains-content-container,
 .content-container {
   --border-radius: var(--text-boxes-radius);
