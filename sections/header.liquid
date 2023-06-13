@@ -671,14 +671,14 @@
   customElements.define('sticky-header', StickyHeader);
 
   const el = document.querySelector(".section-header")
-  console.log('el', el)
   const observer = new IntersectionObserver( 
   ([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
     { threshold: [1] }
   );
 
 observer.observe(el);
-  console.log("this javascript runs")
+  console.log('el', el)
+  console.log("this javascript ruuns")
 {% endjavascript %}
 
 <script type="application/ld+json">
