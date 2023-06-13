@@ -86,12 +86,14 @@
   .header {
     padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
-    position: sticky;
-    top: -1px;
+   
   }
 
   .section-header {
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+     position: sticky;
+    top: -1px;
+    z-index: 3;
   }
 
   @media screen and (min-width: 750px) {
