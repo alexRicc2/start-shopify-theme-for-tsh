@@ -17,8 +17,10 @@
     justify-self: flex-end;
   }
 </style>
-<div class="page-width above-header">
-  <details-modal class="header__search search">
+<div style="position: relative">
+
+  <div class="page-width above-header">
+    <details-modal class="header__search search">
         <details>
           <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
             <span>
@@ -35,7 +37,7 @@
             <div class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}" tabindex="-1">
             
                 <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
-             
+                  
                 <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
                   <div class="field">
                     <input class="search__input field__input"
@@ -81,17 +83,17 @@
           
                 </predictive-search>
            
-           
+                
               <button type="button" class="modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
                 <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
                   <use href="#icon-close">
-                </svg>
-              </button>
-            </div>
-          </div>
-        </details>
-  </details-modal>
-  {%- if request.page_type == 'index' -%}
+                    </svg>
+                    </button>
+                    </div>
+                    </div>
+                    </details>
+                    </details-modal>
+                    {%- if request.page_type == 'index' -%}
     <h1 class="header__heading logo">
   {%- endif -%}
       <a href="{{ routes.root_url }}" class="header__heading-link logo link link--text focus-inset">
@@ -99,47 +101,48 @@
           {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
           {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio -%}
           {{ section.settings.logo | image_url: width: section.settings.width | image_tag:
-            class: 'header__heading-logo',
-            widths: '50, 100, 150, 200, 250, 300, 400, 500',
-            height: logo_height,
-            width: section.settings.logo_width,
-            alt: logo_alt
+          class: 'header__heading-logo',
+          widths: '50, 100, 150, 200, 250, 300, 400, 500',
+          height: logo_height,
+          width: section.settings.logo_width,
+          alt: logo_alt
           }}
-        {%- else -%}
+          {%- else -%}
           <span class="h2">{{ shop.name }}</span>
         {%- endif -%}
-      </a>
-  {%- if request.page_type == 'index' -%}
-    </h1>
-  {%- endif -%}
-  <a href="{{ routes.cart_url }}" class="header__icon bag header__icon--cart link focus-inset" id="cart-icon-bubble">
+        </a>
+        {%- if request.page_type == 'index' -%}
+        </h1>
+      {%- endif -%}
+      <a href="{{ routes.cart_url }}" class="header__icon bag header__icon--cart link focus-inset" id="cart-icon-bubble">
         {%- liquid
-          if cart == empty
-            render 'icon-cart-empty'
-          else
-            render 'icon-cart'
-          endif
+        if cart == empty
+        render 'icon-cart-empty'
+        else
+        render 'icon-cart'
+        endif
         -%}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
-          <div class="cart-count-bubble">
-            {%- if cart.item_count < 100 -%}
-              <span aria-hidden="true">{{ cart.item_count }}</span>
-            {%- endif -%}
-            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+        <div class="cart-count-bubble">
+          {%- if cart.item_count < 100 -%}
+          <span aria-hidden="true">{{ cart.item_count }}</span>
+        {%- endif -%}
+        <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
           </div>
         {%- endif -%}
   </a>
-</div>
-
-{% schema %}
+  </div>
+  </div>
+  
+  {% schema %}
   {
     "name": "above header",
     "settings": [
       {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "t:sections.header.settings.logo.label"
+        "type": "image_picker",
+        "id": "logo",
+        "label": "t:sections.header.settings.logo.label"
     },
     {
       "type": "range",

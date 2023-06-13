@@ -6,6 +6,9 @@
   --color-background: var(--color-base-background-1);
   --gradient-background: var(--gradient-base-background-1);
 }
+*{
+  outline: 1px solid red;
+}
 
 .color-background-2 {
   --color-foreground: var(--color-base-text);
@@ -196,7 +199,7 @@
   --image-padding: var(--blog-card-image-padding);
   --text-alignment: var(--blog-card-text-alignment);
 }
-.is-pinned{
+.is-pinned .header-wrapper{
   background-color: 'red';
 }
 .contains-content-container,
