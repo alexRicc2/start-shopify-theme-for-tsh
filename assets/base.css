@@ -328,11 +328,7 @@ body,
 }
 @media (min-width: 990px){
   .mobile{
-<<<<<<< HEAD
-    display: none; 
-=======
     display: none !important;
->>>>>>> 9b055052db02a61e63a6c72ddb948e6d356a76a5
   }
 }
 
