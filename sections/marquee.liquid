@@ -1,26 +1,44 @@
 <style>
   .marquee{
     background-color: violet;
-    width: 100%;
-    text-transform: uppercase;
-    white-space: nowrap;
+    display: flex;
     overflow: hidden;
+    height: 10vh;
+    user-select: none;
+    gap: 2rem;
+    padding: 1rem 0;
   }
-  .marquee div{
-    font-size: 5rem;
-    padding-left: 100%;
-    display: inline-block;
-    animation: animate 10s linear infinite;
+  .marquee__group{
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    min-width: 100%;
+    animation: scroll 15s linear infinite;
   }
-  @keyframes animate {
+  .marquee__group span{
+    font-size: 5vw;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  @keyframes scroll {
+    0%{
+      transform: translateX(0);
+    }
     100%{
-      transform: translate(-100%, 0);
+      transform: translateX(calc(-100% - 2rem));
     }
   }
 </style>
 
 <div class="marquee">
-  <div>
+  <div class="marquee__group">
+    <span>My marquee</span>
+    <span>Second phrase from marquee</span>
+  </div>
+  <div class="marquee__group" aria-hidden="true">
     <span>My marquee</span>
     <span>Second phrase from marquee</span>
   </div>
