@@ -153,12 +153,19 @@
           "settings": {
             "collection": "test"
           }
+        },
+        "441ce34e-d69f-4c67-99b2-6c8108f8fb18": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "projects"
+          }
         }
       },
       "block_order": [
         "template--19405211042080__c0c1ad01-9923-4d42-994d-42b51a2d982b-1686764796c5895196-0",
         "template--19405211042080__c0c1ad01-9923-4d42-994d-42b51a2d982b-1686764796c5895196-1",
-        "template--19405211042080__c0c1ad01-9923-4d42-994d-42b51a2d982b-1686764796c5895196-2"
+        "template--19405211042080__c0c1ad01-9923-4d42-994d-42b51a2d982b-1686764796c5895196-2",
+        "441ce34e-d69f-4c67-99b2-6c8108f8fb18"
       ],
       "settings": {
         "title": "Collections",
