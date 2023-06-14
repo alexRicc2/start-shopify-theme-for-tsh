@@ -1,10 +1,7 @@
 
 <style>
   .above-header{
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    grid-template-areas: "search logo bag";
+    display: none;
   }
   .search{
     grid-area: search;
@@ -15,6 +12,14 @@
   .bag{
     grid-area: bag;
     justify-self: flex-end;
+  }
+  @media (min-width: 990px){
+    .above-header{
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      grid-template-areas: "search logo bag";
+      align-items: center;
+    }
   }
 </style>
 <div style="position: relative">
