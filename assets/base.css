@@ -2247,6 +2247,7 @@ input[type='checkbox'] {
   position: relative;
   background-color: rgb(var(--color-background));
   z-index: 1;
+  background-color: #f4f6f8;
 }
 
 .header-wrapper--border-bottom {
@@ -2776,7 +2777,6 @@ details-disclosure > details {
 .gradient {
   background: rgb(var(--color-background));
   background: var(--gradient-background);
-  background-color: #fefefe;
   background-attachment: fixed;
 }
 
