@@ -375,9 +375,29 @@
         </details>
       </details-modal>
     {%- endif -%}
-    
-    <div class="left-icon">
-        <details-modal class="header__search desktop">
+    {%- if request.page_type == 'index' -%}
+      <h1 class="header__heading logo mobile">
+    {%- endif -%}
+    <a href="{{ routes.root_url }}" class="header__heading-link logo link link--text focus-inset mobile">
+      {%- if section.settings.logo != blank -%}
+        {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
+        {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio -%}
+        {{ section.settings.logo | image_url: width: section.settings.width | image_tag:
+        class: 'header__heading-logo',
+        widths: '50, 100, 150, 200, 250, 300, 400, 500',
+        height: logo_height,
+        width: section.settings.logo_width,
+        alt: logo_alt
+        }}
+        {%- else -%}
+        <span class="h2">{{ shop.name }}</span>
+      {%- endif -%}
+  </a>
+  {%- if request.page_type == 'index' -%}
+     </h1>
+  {%- endif -%}
+    <div class="left-icon desktop">
+        <details-modal class="header__search">
         <details>
           <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
             <span>
