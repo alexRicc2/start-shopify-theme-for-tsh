@@ -4,7 +4,8 @@
 }
 
 .collection-list-title {
-  margin: 0;
+  margin: auto;
+  text-align: center;
 }
 
 @media screen and (max-width: 749px) {

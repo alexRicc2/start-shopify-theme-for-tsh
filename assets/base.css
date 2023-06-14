@@ -328,7 +328,7 @@ body,
 }
 @media (min-width: 990px){
   .mobile{
-    display: none;
+    display: none; 
   }
 }
 
