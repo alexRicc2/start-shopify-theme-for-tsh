@@ -2288,9 +2288,6 @@ input[type='checkbox'] {
       'navigation navigation navigation';
   }
 
-  .header:not(.header--middle-left, .header--middle-center) .header__inline-menu {
-    margin-top: 1.05rem;
-  }
 }
 
 .header *[tabindex='-1']:focus {
@@ -2615,7 +2612,11 @@ details[open] > .header__submenu {
 
 @media screen and (min-width: 990px) {
   .header__inline-menu {
-    display: block;
+    display: flex;
+    justify-content: center;
+  }
+  .left-icon{
+    grid-area: left-icon
   }
 
   .header--top-center .header__inline-menu {
