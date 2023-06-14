@@ -2609,6 +2609,15 @@ details[open] > .header__submenu {
 .header--top-center .header__heading-link {
   margin-left: 0;
 }
+.left-icon, .header__icons{
+  display: none;
+}
+.is-pinned .left-icon{
+  display: block;
+}
+.is-pinned .header__icons{
+  display: flex;
+}
 
 @media screen and (min-width: 990px) {
   .header__inline-menu {
@@ -2616,7 +2625,7 @@ details[open] > .header__submenu {
     justify-content: center;
   }
   .left-icon{
-    grid-area: left-icon
+    grid-area: left-icon;
   }
 
   .header--top-center .header__inline-menu {
