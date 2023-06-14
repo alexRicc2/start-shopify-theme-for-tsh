@@ -323,12 +323,12 @@ body,
 }
 @media (max-width: 990px){
   .desktop{
-    display: none;
+    display: none !important;
   }
 }
 @media (min-width: 990px){
   .mobile{
-    display: none;
+    display: none !important;
   }
 }
 
