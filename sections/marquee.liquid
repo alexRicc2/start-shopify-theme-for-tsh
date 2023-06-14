@@ -1,6 +1,30 @@
-<section>
-  this is the marquee section
-</section>
+<style>
+  .marquee{
+    background-color: violet;
+    width: 100%;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .marquee div{
+    font-size: 5rem;
+    padding-left: 100%;
+    display: inline-block;
+    animation: animate 10s linear infinite;
+  }
+  @keyframes animate {
+    100%{
+      transform: translate(-100%, 0);
+    }
+  }
+</style>
+
+<div class="marquee">
+  <div>
+    <span>My marquee</span>
+    <span>Second phrase from marquee</span>
+  </div>
+</div>
 
 {% schema %}
   {
