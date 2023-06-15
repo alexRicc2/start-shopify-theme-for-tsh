@@ -38,12 +38,22 @@
 
 <div class="marquee">
   <div class="marquee__group">
-    <span>My marquee</span>
-    <span>Second phrase from marquee</span>
+    {%- for block in section.blocks -%}
+      {%-  case block.type -%}
+        {% when 'text' %}
+        <span>{{ block.settings.text }}</span>
+        {% endcase %}
+     {% endfor %} 
+
   </div>
   <div class="marquee__group" aria-hidden="true">
-    <span>My marquee</span>
-    <span>Second phrase from marquee</span>
+    {%- for block in section.blocks -%}
+      {%-  case block.type -%}
+        {% when 'text' %}
+        <span>{{ block.settings.text }}</span>
+        {% endcase %}
+     {% endfor %} 
+  
   </div>
 </div>
 
