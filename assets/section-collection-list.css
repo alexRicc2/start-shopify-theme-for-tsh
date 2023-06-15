@@ -62,11 +62,9 @@
 }
 
 .collection-list__item{
-  transform: translateY(20px);
-  opacity: 0.2;
-  transition: transform 1s ease-in, opacity 1s ease-in-out;
+  opacity: 0;
+  transition: opacity .5s ease;
 }
 .show{
-  transform: translateY(0);
   opacity: 1;
 }
