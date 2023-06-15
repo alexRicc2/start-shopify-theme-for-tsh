@@ -48,17 +48,41 @@
 </div>
 
 {% schema %}
-  {
-    "name": "marquee",
-    "settings": [],
-    "presets": [{
-      
-      "name": "Marquee"
+{
+  "name": "marquee",
+  "settings": [],
+  "presets": [{
+    "name": "Marquee"
+  }],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button",
+          "default": "Button",
+          "info": "Show button"
+        }
+      ]
     }
-    ]
-    
-  }
+  ]
+}
 {% endschema %}
+
 
 {% stylesheet %}
 {% endstylesheet %}
