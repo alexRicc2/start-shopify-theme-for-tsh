@@ -77,6 +77,18 @@
   </div>
 </div>
 
+{% javascript%}
+  const collection_cards_elements = document.querySelectorAll(".card-wrapper")
+  console.log('cards:', collection_cards_elements)
+  // const observer = new IntersectionObserver( 
+  // ([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
+    // { threshold: [1] }
+  // );
+  
+
+// observer.observe(el);  
+{% endjavascript %}
+
 {% schema %}
 {
   "name": "t:sections.collection-list.name",
