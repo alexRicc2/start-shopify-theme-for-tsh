@@ -78,16 +78,28 @@
 </div>
 
 {% javascript%}
-  console.log('js in collection list run');
-  const collection_cards_elements = document.querySelectorAll(".card-wrapper")
-  console.log('cards:', collection_cards_elements)
-  // const observer = new IntersectionObserver( 
-  // ([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
-    // { threshold: [1] }
-  // );
-  
+ console.log('js in collection list run');
+const collectionCardsElements = document.querySelectorAll(".collection-list__item");
+console.log('cards:', collectionCardsElements);
 
-// observer.observe(el);  
+const observerCallback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+};
+
+const observerOptions = {
+  threshold: 0
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+collectionCardsElements.forEach((card) => {
+  observer.observe(card);
 {% endjavascript %}
 
 {% schema %}
