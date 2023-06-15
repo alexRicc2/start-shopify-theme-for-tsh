@@ -297,6 +297,17 @@
     },
     "2b6dc760-8c85-40bb-a930-7c6d27f923a0": {
       "type": "marquee",
+      "blocks": {
+        "50a4c372-31ab-4e48-859b-5510961b15ac": {
+          "type": "text",
+          "settings": {
+            "text": "ola"
+          }
+        }
+      },
+      "block_order": [
+        "50a4c372-31ab-4e48-859b-5510961b15ac"
+      ],
       "settings": {
       }
     }
