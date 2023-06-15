@@ -59,30 +59,55 @@
 
 <div class="marquee">
   <div class="marquee__group">
-    {%- for block in section.blocks -%}
-      {%-  case block.type -%}
+    {% for block in section.blocks %}
+      {% case block.type %}
         {% when 'text' %}
-        <span>{{ block.settings.text }}</span>
+          <span>{{ block.settings.text }}</span>
         {% when 'button' %}
-        <a class="button-marquee" {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} >
-          {{ block.settings.button_label | escape }}
-        </a> 
+          <a class="button-marquee" {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} >
+            {{ block.settings.button_label | escape }}
+          </a> 
+      {% endcase %}
+    {% endfor %}
+    
+    {% if section.blocks.size < 4 %}
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'text' %}
+            <span>{{ block.settings.text }}</span>
+          {% when 'button' %}
+            <a class="button-marquee" {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} >
+              {{ block.settings.button_label | escape }}
+            </a> 
         {% endcase %}
-     {% endfor %} 
-
+      {% endfor %}
+    {% endif %}  
   </div>
-  <div class="marquee__group" aria-hidden="true">
-    {%- for block in section.blocks -%}
-      {%-  case block.type -%}
-        {% when 'text' %}
-        <span>{{ block.settings.text }}</span>
-    {% when 'button' %}
-        <a class="button-marquee" {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} >
-          {{ block.settings.button_label | escape }}
-        </a> 
-        {% endcase %}
-     {% endfor %} 
   
+  <div class="marquee__group" aria-hidden="true">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'text' %}
+          <span>{{ block.settings.text }}</span>
+        {% when 'button' %}
+          <a class="button-marquee" {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} >
+            {{ block.settings.button_label | escape }}
+          </a> 
+      {% endcase %}
+    {% endfor %}
+    
+    {% if section.blocks.size < 4 %}
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'text' %}
+            <span>{{ block.settings.text }}</span>
+          {% when 'button' %}
+            <a class="button-marquee" {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} >
+              {{ block.settings.button_label | escape }}
+            </a> 
+        {% endcase %}
+      {% endfor %}
+    {% endif %}  
   </div>
 </div>
 
