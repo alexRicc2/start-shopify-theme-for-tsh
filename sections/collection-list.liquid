@@ -98,7 +98,9 @@ const observerOptions = {
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-collectionCardsElements.forEach((card) => {
+collectionCardsElements.forEach((card, index) => {
+  const animationDelay = index * 100; // Adjust the delay timing as needed
+  card.style.animationDelay = `${animationDelay}ms`;
   observer.observe(card);
 })
 {% endjavascript %}
