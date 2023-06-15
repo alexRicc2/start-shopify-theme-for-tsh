@@ -42,6 +42,10 @@
       {%-  case block.type -%}
         {% when 'text' %}
         <span>{{ block.settings.text }}</span>
+        {% when 'button' %}
+        <a {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} >
+          {{ block.settings.button_label | escape }}
+        </a> 
         {% endcase %}
      {% endfor %} 
 
@@ -88,6 +92,11 @@
           "label": "Button",
           "default": "Button",
           "info": "Show button"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "link"
         }
       ]
     }
