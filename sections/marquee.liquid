@@ -51,8 +51,30 @@
     "presets": [{
       
       "name": "Marquee"
+    }],
+    "blocks": [{
+      "name": "text",
+        "type": "text",
+        "settings": [{
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }],
+    },
+    {
+     "name": "button",
+     "type": "button",
+     "settings": [
+      {"type": "text",
+    "id": "button_label",
+    "label": "button",
+    "default": "button",
+    "info": "show button"
+  }
+     ]
     }
-    ]
+  ]
+    
     
   }
 {% endschema %}
