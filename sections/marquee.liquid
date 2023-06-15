@@ -8,6 +8,9 @@
     gap: 2rem;
     padding: 1rem 0;
   }
+  .marquee:hover .marquee__group{
+    animation-play-state: paused;
+  }
   .marquee__group{
     flex-shrink: 0;
     display: flex;
@@ -51,30 +54,8 @@
     "presets": [{
       
       "name": "Marquee"
-    }],
-    "blocks": [{
-      "name": "text",
-        "type": "text",
-        "settings": [{
-          "type": "text",
-          "id": "text",
-          "label": "Text"
-        }],
-    },
-    {
-     "name": "button",
-     "type": "button",
-     "settings": [
-      {"type": "text",
-    "id": "button_label",
-    "label": "button",
-    "default": "button",
-    "info": "show button"
-  }
-     ]
     }
-  ]
-    
+    ]
     
   }
 {% endschema %}
