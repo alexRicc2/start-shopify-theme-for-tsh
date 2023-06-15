@@ -139,48 +139,8 @@
   </a>
                     {%  assign totalNumberOfSales = pages['contact'].metafields.custom.total_number_of_sales %}
                     <p>total number of sales: {{ totalNumberOfSales }}</p>
-                    <script>
-    // Function to increment the total sales count
-    function incrementSalesCount() {
-      const salesCountElement = document.getElementById('total-sales-counter');
-      const currentCount = parseInt(salesCountElement.textContent.split(':')[1]);
-
-      // Increment the count by 1
-      const newCount = currentCount + 1;
-      salesCountElement.textContent = 'Total Number of Sales: ' + newCount;
-
-      // Send the updated value to Shopify API to update the metafield
-      const metafieldValue = JSON.stringify({ value: newCount });
-      fetch(`/admin/api/2021-09/pages/{{ page.id }}/metafields.json`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Shopify-Access-Token': '{{ shop.access_token }}'
-        },
-        body: JSON.stringify({
-          metafield: {
-            key: 'custom.total_number_of_sales',
-            value: metafieldValue,
-            value_type: 'string',
-            namespace: 'custom'
-          }
-        })
-      })
-      .then(response => {
-        if (response.ok) {
-          console.log('Metafield updated successfully');
-        } else {
-          console.error('Failed to update metafield');
-        }
-      })
-      .catch(error => {
-        console.error('Error updating metafield:', error);
-      });
-    }
-
-    // Increment the sales count every 10 seconds
-    setInterval(incrementSalesCount, 10000);
-  </script>
+                  
+   
   </div>
   </div>
   
