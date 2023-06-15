@@ -82,13 +82,12 @@
 const collectionCardsElements = document.querySelectorAll(".collection-list__item");
 console.log('cards:', collectionCardsElements);
 
-const observerCallback = (entries) => {
+const observerCallback = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
-    }
+      observer.unobserve(entry.target);
+    } 
   });
 };
 
