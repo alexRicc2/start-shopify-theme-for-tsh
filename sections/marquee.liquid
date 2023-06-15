@@ -34,6 +34,30 @@
       transform: translateX(calc(-100% - 2rem));
     }
   }
+  .button-marquee{
+    appearance: none;
+    --button-border-color: #50248f;
+    --button-hover-filter: contrast(90%) brightness(1.1);
+    margin: 1px;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.4em;
+    min-width: 148px;
+    padding: 11px 39px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    width: auto;
+    border-radius: 25px;
+    border: 0;
+    text-transform: none;
+    letter-spacing: inherit;
+    white-space: normal;
+    box-shadow: 0 0 0 1px var(--button-border-color);
+    background-color: #50248f;
+    color: #ffffff;
+    transition: all 100ms ease-in-out;
+  }
 </style>
 
 <div class="marquee">
@@ -43,7 +67,7 @@
         {% when 'text' %}
         <span>{{ block.settings.text }}</span>
         {% when 'button' %}
-        <a {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} >
+        <a class="button-marquee" {% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} >
           {{ block.settings.button_label | escape }}
         </a> 
         {% endcase %}
