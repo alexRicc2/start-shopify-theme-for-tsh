@@ -303,10 +303,17 @@
           "settings": {
             "text": "ola"
           }
+        },
+        "8401995a-09c1-447f-a979-0ba0516bfafa": {
+          "type": "text",
+          "settings": {
+            "text": "the second marque in this thing"
+          }
         }
       },
       "block_order": [
-        "50a4c372-31ab-4e48-859b-5510961b15ac"
+        "50a4c372-31ab-4e48-859b-5510961b15ac",
+        "8401995a-09c1-447f-a979-0ba0516bfafa"
       ],
       "settings": {
       }
