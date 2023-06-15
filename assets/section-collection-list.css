@@ -63,8 +63,12 @@
 
 .collection-list__item{
   opacity: 0;
-  transition: opacity .5s ease;
 }
 .show{
-  opacity: 1;
+  animation: show .5s forwards;
+}
+@keyframes show {
+  to{
+    opacity:1;
+  }
 }
