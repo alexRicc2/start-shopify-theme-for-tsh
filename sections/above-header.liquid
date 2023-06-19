@@ -139,7 +139,7 @@
   </a>
                     {%  assign totalNumberOfSales = pages['contact'].metafields.custom.total_number_of_sales %}
                     <p id="total-sales-counter">total number of sales: {{ totalNumberOfSales }}</p>
-                   <script>
+                   {% comment %} <script>
     // Function to increment the total sales count
     function incrementSalesCount() {
       const salesCountElement = document.getElementById('total-sales-counter');
@@ -180,7 +180,7 @@
 
     // Increment the sales count every 10 seconds
     setInterval(incrementSalesCount, 10000);
-  </script>
+  </script> {% endcomment %}
    
   </div>
   </div>
