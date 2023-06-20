@@ -2970,9 +2970,9 @@ details-disclosure > details {
   justify-content: flex-end;
 }
 .payments{
-  display: grid;
-  grid-gap: 8px;
+  display: flex;
   gap: 8px;
+  flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, 38px);
 }
 .badges img{
