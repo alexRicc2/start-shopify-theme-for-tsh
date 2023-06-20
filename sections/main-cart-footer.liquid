@@ -52,8 +52,9 @@
                 </small>
               </div>
             {%- when 'badges' -%}
-              <div>
+              <div class="badges">
                 this is the badges block
+                <img src={{'badge1.png' | asset_url}} alt="truting badge"/>
               </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
