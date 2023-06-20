@@ -24,12 +24,18 @@
           "type": "badges",
           "settings": {
           }
+        },
+        "18e3d13d-b46a-4de3-9f7a-04388e8d4d62": {
+          "type": "payments",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "subtotal",
         "buttons",
-        "4df208de-5046-4aff-8593-0546fb5211a4"
+        "4df208de-5046-4aff-8593-0546fb5211a4",
+        "18e3d13d-b46a-4de3-9f7a-04388e8d4d62"
       ],
       "settings": {
       }
