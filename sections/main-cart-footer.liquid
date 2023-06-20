@@ -51,6 +51,10 @@
                   {%- endif -%}
                 </small>
               </div>
+            {%- when 'badges' -%}
+              <div>
+                this is the badges block
+              </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
@@ -114,6 +118,12 @@
       "name": "t:sections.main-cart-footer.blocks.buttons.name",
       "limit": 1
     },
+    {
+      "type": "badges",
+      "name": "trusting badges",
+      "limit": 1
+    },
+
     {
       "type": "@app"
     }
