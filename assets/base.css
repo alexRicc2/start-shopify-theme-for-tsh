@@ -2964,6 +2964,17 @@ details-disclosure > details {
 .spr-container{
   background-color: #ffcc00;
 }
+.badges{
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+.payments{
+  display: grid;
+  grid-gap: 8px;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, 38px);
+}
 .badges img{
   width: 32px;
   height: 32px;
