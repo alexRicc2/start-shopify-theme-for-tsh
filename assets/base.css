@@ -2971,6 +2971,7 @@ details-disclosure > details {
 }
 .payments{
   display: flex;
+  flex-direction: flex-end;
   gap: 8px;
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, 38px);
