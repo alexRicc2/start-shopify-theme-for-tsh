@@ -2961,3 +2961,7 @@ details-disclosure > details {
     outline: transparent solid 1px;
   }
 }
+
+.spr-container{
+  background-color: #ffcc00;
+}
