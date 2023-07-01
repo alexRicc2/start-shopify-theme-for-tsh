@@ -4,22 +4,24 @@
   
 {%- endstyle -%}
 
-<div >
-      {% for article in blog.articles %}
-        <h1>{{ section.title }}</h1>
+<div>
+  {% for article in blog.articles %}
+    {% assign article_handle = article.handle %}
+    {% assign article_url = '/blogs/news/' | append: article_handle %}
+    {% if article_url == section.settings.article_url %}
+      <h1>{{ article.title }}</h1>
       {% assign content_length = article.content | size %}
       {% assign half_length = content_length | divided_by: 2 %}
-        <h1>{{ article.title }} {{ article.handle }} - {{ page.url }}</h1>
       <div>{{ article.content | slice: 0, half_length }}</div>
-        <div>
-          <div class="ml-embedded" data-form="wicNzF"></div>
-          </div>
+      <div>
+        <div class="ml-embedded" data-form="wicNzF"></div>
+      </div>
       <div>{{ article.content | slice: half_length, content_length }}</div>
-  
-    {% endfor %}
-    <div class="ml-embedded" data-form="wicNzF"></div>
-      
+    {% endif %}
+  {% endfor %}
+  <div class="ml-embedded" data-form="wicNzF"></div>
 </div>
+
 <!-- MailerLite Universal -->
 
 <script>
