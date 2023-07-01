@@ -6,7 +6,10 @@
 
 <div >
         <h1>page handle: {{ request.path | split: '/' | last }}</h1>
-      {% for article in blog.articles %}
+      {% assign article_to_display =  request.path | split: '/' | last %}
+  {% for article in blog.articles %}
+      {% assign current_article = article.handle | split: '/' | last %}
+  {% if current_article == article_to_display %}
       {% assign content_length = article.content | size %}
       {% assign half_length = content_length | divided_by: 2 %}
         <h1>{{ article.title }} {{ article.slug }} - {{ page.url }}</h1>
@@ -15,10 +18,10 @@
           <div class="ml-embedded" data-form="wicNzF"></div>
           </div>
       <div>{{ article.content | slice: half_length, content_length }}</div>
-  
-    {% endfor %}
+    {% endif %}
+{% endfor %}
     <div class="ml-embedded" data-form="wicNzF"></div>
-      
+    
 </div>
 <!-- MailerLite Universal -->
 
