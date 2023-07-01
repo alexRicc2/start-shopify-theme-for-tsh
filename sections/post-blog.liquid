@@ -9,7 +9,7 @@
       {% for article in blog.articles %}
       {% assign content_length = article.content | size %}
       {% assign half_length = content_length | divided_by: 2 %}
-        <h1>{{ article.title }} {{ article.handle }} - {{ page.url }}</h1>
+        <h1>{{ article.title }} {{ article.slug }} - {{ page.url }}</h1>
       <div>{{ article.content | slice: 0, half_length }}</div>
         <div>
           <div class="ml-embedded" data-form="wicNzF"></div>
