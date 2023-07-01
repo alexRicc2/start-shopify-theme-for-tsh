@@ -5,7 +5,7 @@
 {%- endstyle -%}
 
 <div >
-        <h1>page handle: {{ request.path }}</h1>
+        <h1>page handle: {{ request.path | split: '/' | last }}</h1>
       {% for article in blog.articles %}
       {% assign content_length = article.content | size %}
       {% assign half_length = content_length | divided_by: 2 %}
