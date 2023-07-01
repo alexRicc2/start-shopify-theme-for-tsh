@@ -11,15 +11,9 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "e2e8ea1a-12ec-4ff5-9fb2-3454a12a53a4": {
-      "type": "post-blog",
-      "settings": {
-      }
     }
   },
   "order": [
-    "main",
-    "e2e8ea1a-12ec-4ff5-9fb2-3454a12a53a4"
+    "main"
   ]
 }
