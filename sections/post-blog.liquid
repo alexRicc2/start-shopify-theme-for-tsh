@@ -1,12 +1,45 @@
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  
+{%- endstyle -%}
+
+<div >
+      {% for article in blog.articles %}
+        <h1>{{ section.title }}</h1>
+      {% assign content_length = article.content | size %}
+      {% assign half_length = content_length | divided_by: 2 %}
+      <div>{{ article.content | slice: 0, half_length }}</div>
+        <div>
+          <div class="ml-embedded" data-form="wicNzF"></div>
+          </div>
+      <div>{{ article.content | slice: half_length, content_length }}</div>
+  
+    {% endfor %}
+    <div class="ml-embedded" data-form="wicNzF"></div>
+      
+</div>
+<!-- MailerLite Universal -->
+
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '378759');
+</script>
+
+<!-- End MailerLite Universal -->
+
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "post blog",
+  "settings": [],
+  "presets": [
+    {
+      "name": "postblog"
+    }
+  ]
+}
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
