@@ -4,34 +4,24 @@
   
 {%- endstyle -%}
 
-<div>
-  <h1>Page handle: {{ request.path | split: '/' | last }}</h1>
-  {% assign article_to_display = request.path | split: '/' | last %}
+<div >
+        <h1>page handle: {{ request.path | split: '/' | last }}</h1>
+      {% assign article_to_display =  request.path | split: '/' | last %}
   {% for article in blog.articles %}
-    {% assign current_article = article.handle | split: '/' | last %}
-    {% if current_article == article_to_display %}
+      {% assign current_article = article.handle | split: '/' | last %}
+  {% if current_article == article_to_display %}
       {% assign content_length = article.content | size %}
       {% assign half_length = content_length | divided_by: 2 %}
-      {% assign first_half_content = article.content | slice: 0, half_length %}
-      {% assign second_half_content = article.content | slice: half_length, content_length %}
-      
-      {% assign first_half_end = first_half_content | rindex: '</p>' %}
-      {% assign second_half_start = second_half_content | index: '<p' %}
-      
-      {% if first_half_end and second_half_start %}
-        {% assign first_half_content = first_half_content | slice: 0, first_half_end %}
-        {% assign second_half_content = second_half_content | slice: second_half_start, second_half_content | size %}
-      {% endif %}
-      
-      <h1>{{ article.title }} {{ article.slug }} - {{ page.url }}</h1>
-      <div>{{ first_half_content }}</div>
-      <div>
-        <div class="ml-embedded" data-form="wicNzF"></div>
-      </div>
-      <div>{{ second_half_content }}</div>
+        <h1>{{ article.title }} {{ article.slug }} - {{ page.url }}</h1>
+      <div>{{ article.content | slice: 0, half_length }}</div>
+        <div>
+          <div class="ml-embedded" data-form="wicNzF"></div>
+          </div>
+      <div>{{ article.content | slice: half_length, content_length }}</div>
     {% endif %}
-  {% endfor %}
-  <div class="ml-embedded" data-form="wicNzF"></div>
+{% endfor %}
+    <div class="ml-embedded" data-form="wicNzF"></div>
+    
 </div>
 <!-- MailerLite Universal -->
 
