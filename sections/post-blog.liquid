@@ -5,8 +5,8 @@
 {%- endstyle -%}
 
 <div >
+        <h1>page handle: {{ page.handle }}</h1>
       {% for article in blog.articles %}
-        <h1>{{ section.title }}</h1>
       {% assign content_length = article.content | size %}
       {% assign half_length = content_length | divided_by: 2 %}
         <h1>{{ article.title }} {{ article.handle }} - {{ page.url }}</h1>
