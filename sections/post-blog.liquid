@@ -4,28 +4,20 @@
   
 {%- endstyle -%}
 
-<div >
-        <h1>page handle: {{ request.path | split: '/' | last }}</h1>
-      {% assign article_to_display =  request.path | split: '/' | last %}
-  {% for article in blog.articles %}
+  <div>
+    <h1>page handle: {{ request.path | split: '/' | last }}</h1>
+    {% assign article_to_display =  request.path | split: '/' | last %}
+    {% for article in blog.articles %}
       {% assign current_article = article.handle | split: '/' | last %}
-  {% if current_article == article_to_display %}
-      {% assign content_length = article.content | size %}
-      {% assign half_length = content_length | divided_by: 2 %}
-        <h1>{{ article.title }} {{ article.slug }} - {{ page.url }}</h1>
-      {% comment %} <div>{{ article.content | slice: 0, half_length }}</div>
-        <div>
-          <div class="ml-embedded" data-form="wicNzF"></div>
-          </div>
-      <div>{{ article.content | slice: half_length, content_length }}</div> {% endcomment %}
-      <div id="post-content">
-        {{article.content}}
-      </div>
-    {% endif %}
-{% endfor %}
-    <div class="ml-embedded" data-form="wicNzF"></div>
-    
-</div>
+      {% if current_article == article_to_display %}
+        <h1>{{ article.title }}</h1>
+        <div id="post-content">
+          {{article.content}}
+        </div>
+      {% endif %}
+   {% endfor %}
+    <div class="ml-embedded" data-form="wicNzF"></div> 
+  </div>
 <!-- MailerLite Universal -->
 
 <script>
@@ -40,13 +32,16 @@
 <script>
   const parentElement = document.querySelector('#post-content')
   const childCount = parentElement.children.length
-  const insertIndex = Math.floor(childCount / 2)
-  const newElement = document.createElement('div')
-  newElement.className = "ml-embedded";
-  newElement.setAttribute("data-form", "wicNzF");
+  if(childCount >= 4){
 
-  parentElement.insertBefore(newElement, parentElement.children[insertIndex]);
-
+    const insertIndex = Math.floor(childCount / 2)
+    const newElement = document.createElement('div')
+    newElement.className = "ml-embedded";
+    newElement.setAttribute("data-form", "wicNzF");
+    
+    parentElement.insertBefore(newElement, parentElement.children[insertIndex]);
+    }
+    
 </script>
 
 {% schema %}
