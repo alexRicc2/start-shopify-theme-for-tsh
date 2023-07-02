@@ -11,6 +11,7 @@
       {% assign current_article = article.handle | split: '/' | last %}
       {% if current_article == article_to_display %}
         <h1>{{ article.title }}</h1>
+        {{ article.image }}
         <div id="post-content">
           {{article.content}}
         </div>
