@@ -37,7 +37,17 @@
 </script>
 
 <!-- End MailerLite Universal -->
+<script>
+  const parentElement = document.querySelector('#post-content')
+  const childCount = parentElement.children.length
+  const insertIndex = Math.floor(childCount / 2)
+  const newElement = document.createElement('div')
+  newElement.className = "ml-embedded";
+  newElement.setAttribute("data-form", "wicNzF");
 
+  parentElement.insertBefore(newElement, parentElement.children[insertIndex]);
+
+</script>
 
 {% schema %}
 {
