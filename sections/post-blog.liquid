@@ -1,17 +1,23 @@
 {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
 {{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
 {%- style -%}
-  
+  .wrapper{
+    max-width: 900px;
+    margin: auto;
+  }
+  .post_image{
+    max-width: 100%;
+    
+  }
 {%- endstyle -%}
 
-  <div>
-    <h1>page handle: {{ request.path | split: '/' | last }}</h1>
+  <div class="wrapper">
     {% assign article_to_display =  request.path | split: '/' | last %}
     {% for article in blog.articles %}
       {% assign current_article = article.handle | split: '/' | last %}
       {% if current_article == article_to_display %}
         <h1>{{ article.title }}</h1>
-        <img src="{{ article| image_url }}" height="{{ article.image.height }}" width="{{ article.image.width }}" alt="{{ article.image.alt }}"/>
+        <img src="{{ article| image_url }}" height="{{ article.image.height }}" width="{{ article.image.width }}" alt="{{ article.image.alt }}" class="post_image"/>
         {{ article | image_url }}
         <div id="post-content">
           {{article.content}}
