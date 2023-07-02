@@ -5,12 +5,14 @@
       "blocks": {
         "featured_image": {
           "type": "featured_image",
+          "disabled": true,
           "settings": {
             "image_height": "adapt"
           }
         },
         "title": {
           "type": "title",
+          "disabled": true,
           "settings": {
             "blog_show_date": true,
             "blog_show_author": false
@@ -39,7 +41,6 @@
     },
     "99a56c65-3ae8-4e55-950a-de15af98f155": {
       "type": "post-blog",
-      "disabled": true,
       "settings": {
       }
     },
