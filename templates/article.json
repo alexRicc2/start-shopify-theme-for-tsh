@@ -2,7 +2,6 @@
   "sections": {
     "main": {
       "type": "main-article",
-      "disabled": true,
       "blocks": {
         "featured_image": {
           "type": "featured_image",
@@ -40,6 +39,7 @@
     },
     "99a56c65-3ae8-4e55-950a-de15af98f155": {
       "type": "post-blog",
+      "disabled": true,
       "settings": {
       }
     },
