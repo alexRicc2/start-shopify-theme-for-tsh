@@ -2192,12 +2192,24 @@ input[type='checkbox'] {
 .announcement-bar {
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
   color: rgb(var(--color-foreground));
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+annoucement-bar__middle{
+  grid-column: 2;
 }
 .announcement-bar__number-count{
-  
+  grid-column: 3;
+  justify-self: flex-end;
 }
-
+@media (max-width: 750px){
+  .annoucment-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
 .announcement-bar__link {
   display: block;
   width: 100%;
