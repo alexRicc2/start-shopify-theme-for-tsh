@@ -11,13 +11,14 @@
   }
 {%- endstyle -%}
 
-  <div class="page-width">
+  <div class="article-template__content page-width page-width--narrow rte">
     {% assign article_to_display =  request.path | split: '/' | last %}
     {% for article in blog.articles %}
       {% assign current_article = article.handle | split: '/' | last %}
       {% if current_article == article_to_display %}
-        <h1>{{ article.title }}</h1>
         <img src="{{ article| image_url }}" height="500px" width="100%" alt="{{ article.image.alt }}" class="post_image" style="aspect-ratio: {{ article.image.aspect_ratio }}"/>
+        <h1>{{ article.title }}</h1>
+        <time>{{ article.published_at | date: '%B %d, %Y' }}</time>
         <div id="post-content">
           {{article.content}}
         </div>
