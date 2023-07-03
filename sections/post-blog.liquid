@@ -11,7 +11,7 @@
   }
 {%- endstyle -%}
 
-  <div class="wrapper">
+  <div class="page-width">
     {% assign article_to_display =  request.path | split: '/' | last %}
     {% for article in blog.articles %}
       {% assign current_article = article.handle | split: '/' | last %}
