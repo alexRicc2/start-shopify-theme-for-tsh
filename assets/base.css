@@ -2204,7 +2204,7 @@ input[type='checkbox'] {
   justify-self: flex-end;
 }
 @media (max-width: 750px){
-  .annoucment-bar{
+  .announcement-bar{
     display: flex;
     flex-direction: column;
     gap: 2px;
