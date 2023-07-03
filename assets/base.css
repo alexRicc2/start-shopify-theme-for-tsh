@@ -2202,6 +2202,7 @@ input[type='checkbox'] {
 .announcement-bar__number-count{
   grid-column: 3;
   justify-self: flex-end;
+  padding-right: 6px;
 }
 @media (max-width: 750px){
   .announcement-bar{
