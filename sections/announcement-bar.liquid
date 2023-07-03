@@ -1,10 +1,11 @@
-{% stylesheet %}
+<style>
+  
   .number-count{
     position: absolute;
     right: 0;
     top: 0;
   }
-{% endstylesheet %}
+</style>
 
 {%- for block in section.blocks -%}
   {%- case block.type -%}
@@ -28,7 +29,7 @@
         {%- endif -%}
        {%  assign totalNumberOfSales = pages['contact'].metafields.custom.total_number_of_sales %}
         <div class="number-count">
-        <p id="total-sales-counter">total number of sales: {{ totalNumberOfSales }}</p>
+        <p>total number of sales: {{ totalNumberOfSales }}</p>
         </div>
       </div>
   {%- endcase -%}
