@@ -313,9 +313,8 @@
                     </div>
                   </div>
                 </noscript>
-                {% when 'badges' %}
-                  {% render 'badges' %}
-                {% endwhen %}
+              {% when 'badges' %}
+                {% render 'badges' %}
               {%- when 'buy_buttons' -%}
                 <div {{ block.shopify_attributes }}>
                   {%- if product != blank -%}
