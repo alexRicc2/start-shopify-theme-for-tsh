@@ -313,6 +313,9 @@
                     </div>
                   </div>
                 </noscript>
+                {% when 'badges' %}
+                  {% render 'badges' %}
+                {% endwhen %}
               {%- when 'buy_buttons' -%}
                 <div {{ block.shopify_attributes }}>
                   {%- if product != blank -%}
@@ -630,6 +633,11 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "badges",
+      "name": "trusting badges",
+      "limit": 1
     },
     {
       "type": "text",
