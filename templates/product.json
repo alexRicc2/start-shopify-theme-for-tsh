@@ -83,6 +83,11 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "235a1dd4-bb23-41dc-9f1c-ce4d54a64944": {
+          "type": "badges",
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -97,7 +102,8 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
-        "share"
+        "share",
+        "235a1dd4-bb23-41dc-9f1c-ce4d54a64944"
       ],
       "settings": {
         "enable_sticky_info": true,
