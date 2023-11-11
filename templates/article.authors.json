@@ -1,10 +1,5 @@
 {
   "sections": {
-    "99a56c65-3ae8-4e55-950a-de15af98f155": {
-      "type": "post-blog",
-      "settings": {
-      }
-    },
     "main": {
       "type": "main-article",
       "blocks": {
@@ -43,40 +38,18 @@
         "share",
         "content"
       ],
+      "disabled": true,
       "settings": {
       }
     },
-    "8502e513-e849-4b6e-8038-6c2e868d4f97": {
-      "type": "featured-collection",
+    "2393a166-b0f6-41ce-9a20-8b17533658d2": {
+      "type": "author",
       "settings": {
-        "title": "Featured collection",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "camisas",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "99a56c65-3ae8-4e55-950a-de15af98f155",
     "main",
-    "8502e513-e849-4b6e-8038-6c2e868d4f97"
+    "2393a166-b0f6-41ce-9a20-8b17533658d2"
   ]
 }
