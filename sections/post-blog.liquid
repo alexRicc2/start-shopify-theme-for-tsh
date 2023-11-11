@@ -19,18 +19,9 @@
         <img src="{{ article| image_url }}" height="500px" width="100%" alt="{{ article.image.alt }}" class="post_image" style="aspect-ratio: {{ article.image.aspect_ratio }}"/>
         <h1>{{ article.title }}</h1>
         <time>{{ article.published_at | date: '%B %d, %Y' }}</time>
-         <div id="table-of-contents">
+        <div id="table-of-contents">
         <h2>Table of Contents</h2>
-        <ul>
-          {% assign headings = article.content | split: '<h' %}
-          {% for heading in headings %}
-            {% assign level = heading | split: '>' | first | remove: '</h' | plus: 0 %}
-            {% if level > 0 and level <= 4 %}
-              {% assign title = heading | split: '</h' | last | strip %}
-              <li><a href="#{{ title | slugify }}">{{ title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
+        <ul id="toc-list"></ul>
       </div>
         <div id="post-content">
           {{article.content}}
@@ -43,6 +34,27 @@
 
 
 <!-- End MailerLite Universal -->
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const headings = document.querySelectorAll('#post-content h1, #post-content h2, #post-content h3, #post-content h4');
+      const tocList = document.getElementById('toc-list');
+
+      headings.forEach(function (heading) {
+        const level = heading.tagName.slice(1);
+        const title = heading.textContent;
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+
+        heading.id = title.toLowerCase().replace(/\s+/g, '-');
+
+        link.href = `#${heading.id}`;
+        link.textContent = title;
+
+        listItem.appendChild(link);
+        tocList.appendChild(listItem);
+      });
+    });
+  </script>
 <script>
   const parentElement = document.querySelector('#post-content')
   const childCount = parentElement.children.length
