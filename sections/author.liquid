@@ -1,9 +1,19 @@
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
-  }
+  "name": "author blog",
+  "settings": [],
+  "presets": [
+    {
+      "name": "authorblog"
+    }
+  ]
+}
 {% endschema %}
+
+<div>
+  my author: {{ article.title }}
+  {{ article.content }}
+</div>
 
 {% stylesheet %}
 {% endstylesheet %}
