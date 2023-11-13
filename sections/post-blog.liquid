@@ -31,6 +31,16 @@
 <!--     <div class="ml-embedded" data-form="wicNzF"></div>  -->
     <div class="klaviyo-form-S6kpfw"></div>
   </div>
+      <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Author",
+      "name": {{ article.title | json }},
+      "url": {{ request.origin | json }},
+      "description": {{ article.excerpt | json }},
+     
+    }
+  </script>
 
 
 <!-- End MailerLite Universal -->
