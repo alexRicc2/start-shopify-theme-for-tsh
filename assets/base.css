@@ -10,6 +10,11 @@
   outline: 1px solid green;
 }
 
+@font-face{
+  font-family: "TTNORMS-Medium";
+  src: url({{ "TTNorms-Medium" | asset_url}}) format("woff2");
+}
+
 .color-background-2 {
   --color-foreground: var(--color-base-text);
   --color-background: var(--color-base-background-2);
@@ -408,7 +413,7 @@ body,
   font-size: 1.5rem;
   letter-spacing: 0.06rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
-  font-family: var(--font-body-family);
+  font-family: "TTNorms-Medium";
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
 }
