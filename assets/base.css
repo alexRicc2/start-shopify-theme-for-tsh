@@ -350,7 +350,9 @@ body,
 .shopify-challenge__container {
   margin: 7rem auto;
 }
-
+*{
+  font-family: "TTNorms-Medium" !important;
+}
 .rte-width {
   max-width: 82rem;
   margin: 0 auto 2rem;
